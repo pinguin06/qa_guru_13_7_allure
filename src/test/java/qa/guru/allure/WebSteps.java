@@ -13,22 +13,22 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class WebSteps {
 
-    @Step("ÐžÑ‚ÐºÑ€Ñ‹Ð²Ð°ÐµÐ¼ Ð³Ð»Ð°Ð²Ð½ÑƒÑŽ ÑÑ€Ð°Ð½Ð¸Ñ†Ñƒ")
+    @Step("Îòêðûâàåì ãëàâíóþ ñðàíèöó")
     public void openMainPage() {
         open("https://www.film.ru");
     }
 
-    @Step("Ð˜Ñ‰ÐµÐ¼ Ð½ÑƒÐ¶Ð½Ñ‹Ð¹ Ñ„Ð°Ð¹Ð»")
+    @Step("Èùåì íóæíûé ôàéë")
     public void searchFilm() {
         $("#quick_search_input").setValue("book").pressEnter();
     }
 
-    @Step("ÐŸÑ€Ð¾Ð²ÐµÑ€ÑÐµÐ¼, Ñ‡Ñ‚Ð¾ ÑÑ€ÐµÐ´Ð¸ Ð½Ð°Ð¹Ð´ÐµÐ½Ð½Ñ‹Ñ… Ñ„Ð¸Ð»ÑŒÐ¼Ð¾Ð² Ð¸Ð¼ÐµÐµÑ‚ÑÑ Green Book")
+    @Step("Ïðîâåðÿåì, ÷òî ñðåäè íàéäåííûõ ôèëüìîâ èìååòñÿ Green Book")
     public void checkFilm() {
         $$("#movies_list").find(text("Green book")).shouldBe(visible);
     }
 
-    @Step("ÐŸÐµÑ€ÐµÑ…Ð¾Ð´Ð¸Ð¼ Ð½Ð° ÑÑ‚Ñ€Ð°Ð½Ð¸Ñ†Ñƒ Ñ„Ð¸Ð»ÑŒÐ¼Ð°")
+    @Step("Ïåðåõîäèì íà ñòðàíèöó ôèëüìà")
     public void cardFilm() {
         $(By.cssSelector("#movies_list > a:nth-child(1)")).click();
     }
