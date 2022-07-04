@@ -20,22 +20,22 @@ public class AttachmentsStep {
     @Test
     @Owner("ORomanshchak")
     @Severity(SeverityLevel.MINOR)
-    @Feature("Практика с лейбами на тесте с лямбдами")
+    @Feature("РџСЂР°РєС‚РёРєР° СЃ Р»РµР№Р±Р°РјРё РЅР° С‚РµСЃС‚Рµ СЃ Р»СЏРјР±РґР°РјРё")
     public void testLambdaStep() {
         SelenideLogger.addListener("allure", new AllureSelenide());
-        step("Открываем главную страницу", () -> {
+        step("РћС‚РєСЂС‹РІР°РµРј РіР»Р°РІРЅСѓСЋ СЃС‚СЂР°РЅРёС†Сѓ", () -> {
             open("https://www.film.ru");
         });
 
-        step("Ищем нужный фильм", () -> {
+        step("РС‰РµРј РЅСѓР¶РЅС‹Р№ С„РёР»СЊРј", () -> {
             $("#quick_search_input").setValue("book").pressEnter();
         });
 
-        step("Проверяем, что среди найденных фильмов имеется Green Book", () -> {
+        step("РџСЂРѕРІРµСЂСЏРµРј, С‡С‚Рѕ СЃСЂРµРґРё РЅР°Р№РґРµРЅРЅС‹С… С„РёР»СЊРјРѕРІ РёРјРµРµС‚СЃСЏ Green Book", () -> {
             $$("#movies_list").find(text("Green book")).shouldBe(visible);
         });
 
-        step("Переходим на страницу фильма", () -> {
+        step("РџРµСЂРµС…РѕРґРёРј РЅР° СЃС‚СЂР°РЅРёС†Сѓ С„РёР»СЊРјР°", () -> {
             $(By.cssSelector("#movies_list > a:nth-child(1)")).click();
             attachment("Source", webdriver().driver().source());
             Allure.getLifecycle().addAttachment(
@@ -48,7 +48,7 @@ public class AttachmentsStep {
     @Test
     @Owner("ORomanshchak")
     @Severity(SeverityLevel.MINOR)
-    @Feature("Практика с лейбами на тесте с @Step")
+    @Feature("РџСЂР°РєС‚РёРєР° СЃ Р»РµР№Р±Р°РјРё РЅР° С‚РµСЃС‚Рµ СЃ @Step")
     public void searchFilm() {
         SelenideLogger.addListener("allure", new AllureSelenide());
         WebSteps steps = new WebSteps();
