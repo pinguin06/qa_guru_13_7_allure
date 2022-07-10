@@ -48,6 +48,7 @@ public class AttachmentsStep {
     }
 
     @Test
+    @Tag("telega")
     @Owner("ORomanshchak")
     @Severity(SeverityLevel.MINOR)
     @Feature("Практика с лейбами на тесте с @Step")
