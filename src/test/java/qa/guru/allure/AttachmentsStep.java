@@ -4,6 +4,7 @@ import com.codeborne.selenide.WebDriverRunner;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.*;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
@@ -18,6 +19,7 @@ import static io.qameta.allure.Allure.step;
 public class AttachmentsStep {
 
     @Test
+    @Tag("telega")
     @Owner("ORomanshchak")
     @Severity(SeverityLevel.MINOR)
     @Feature("Практика с лейбами на тесте с лямбдами")
